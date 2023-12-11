@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    background-image: url('./assets/images/wolfgang-hasselmann-qOCT-EF7uSU-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 71%;
+    background-attachment: fixed;
+}
