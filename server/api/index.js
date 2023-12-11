@@ -14,18 +14,13 @@ const app = express();
 app.use(bodyParser.json());
 
 // Use middleware to enable CORS
-app.use(cors(
-    {
-        origin: ["https://todo-list-henna-beta.vercel.app"],
-        methods: ["POST", "GET"],
-        credentials: true
-    }
-));
+app.use(cors());
 
 app.use((req, res, next) => {
     // Allow requests only from 'https://todo-list-henna-beta.vercel.app'
-    res.header('Access-Control-Allow-Origin', 'https://todo-list-henna-beta.vercel.app');
-    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    res.setHeader('Access-Control-Allow-Credentials', true)
+    res.setHeader('Access-Control-Allow-Origin', 'https://todo-list-henna-beta.vercel.app');
+    res.Header('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   
     // Continue to the next middleware
