@@ -27,7 +27,7 @@ function App() {
  };
 
  useEffect(() => {
-  axios.get('http://localhost:3000/tasks')
+  axios.get('https://todo-list-henna-beta.vercel.app/tasks')
   .then(response => {
     setData(response.data);
     // console.log(response.data)
@@ -41,7 +41,7 @@ function App() {
 
  const createTask = () => {
   if(task){
-    axios.post('http://localhost:3000/createTask', {task})
+    axios.post('https://todo-list-henna-beta.vercel.app/createTask', {task})
     .then(res => setData([...data ,res.data]))
     .catch(error => {
      console.error('Error posting data:', error);
@@ -54,7 +54,7 @@ function App() {
  };
 
  const deleteTask = (id) => {
-  axios.post('http://localhost:3000/deleteTask', {id})
+  axios.post('https://todo-list-henna-beta.vercel.app/deleteTask', {id})
   .then(res => setData(res.data))
   .catch(error => {
    console.error('Error posting data:', error);
@@ -63,7 +63,7 @@ function App() {
 
  const updateTask = (id) => {
   if(updateTaskValue){
-  axios.post('http://localhost:3000/updateTask', {id, task:updateTaskValue})
+  axios.post('https://todo-list-henna-beta.vercel.app/updateTask', {id, task:updateTaskValue})
   .then(res => setData(res.data))
   .catch(error => {
    console.error('Error posting data:', error);
