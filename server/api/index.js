@@ -14,7 +14,7 @@ const app = express();
 app.use(bodyParser.json());
 
 // Use middleware to enable CORS
-app.use(cors());
+// app.use(cors());
 
 app.use((req, res, next) => {
     // Allow requests only from 'https://todo-list-henna-beta.vercel.app'
