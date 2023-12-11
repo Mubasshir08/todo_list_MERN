@@ -20,8 +20,8 @@ app.use((req, res, next) => {
     // Allow requests only from 'https://todo-list-henna-beta.vercel.app'
     res.setHeader('Access-Control-Allow-Credentials', true)
     res.setHeader('Access-Control-Allow-Origin', 'https://todo-list-henna-beta.vercel.app');
-    res.Header('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
-    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
+    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   
     // Continue to the next middleware
     next();
