@@ -16,6 +16,10 @@ app.use(bodyParser.json());
 // Use middleware to enable CORS
 app.use(cors());
 
+app.get('/', (req,res)=> {
+    res.send('server run successfully')
+})
+
 app.get('/tasks' , async (req,res) => {
     const tasks = await toDoModel.find();
     res.send(tasks);
