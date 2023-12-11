@@ -27,7 +27,7 @@ function App() {
  };
 
  useEffect(() => {
-  axios.get('https://todo-list-henna-beta.vercel.app/tasks')
+  axios.get('https://todo-list-backend-lilac.vercel.app/tasks')
   .then(response => {
     setData(response.data);
     // console.log(response.data)
