@@ -41,7 +41,7 @@ function App() {
 
  const createTask = () => {
   if(task){
-    axios.post('https://todo-list-henna-beta.vercel.app/createTask', {task})
+    axios.post('https://todo-list-backend-lilac.vercel.app/createTask', {task})
     .then(res => setData([...data ,res.data]))
     .catch(error => {
      console.error('Error posting data:', error);
@@ -54,7 +54,7 @@ function App() {
  };
 
  const deleteTask = (id) => {
-  axios.post('https://todo-list-henna-beta.vercel.app/deleteTask', {id})
+  axios.post('https://todo-list-backend-lilac.vercel.app/deleteTask', {id})
   .then(res => setData(res.data))
   .catch(error => {
    console.error('Error posting data:', error);
@@ -63,7 +63,7 @@ function App() {
 
  const updateTask = (id) => {
   if(updateTaskValue){
-  axios.post('https://todo-list-henna-beta.vercel.app/updateTask', {id, task:updateTaskValue})
+  axios.post('https://todo-list-backend-lilac.vercel.app/updateTask', {id, task:updateTaskValue})
   .then(res => setData(res.data))
   .catch(error => {
    console.error('Error posting data:', error);
