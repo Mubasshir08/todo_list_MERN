@@ -92,7 +92,7 @@ function App() {
       data.map(dt => (
         <div className='mt-10 w-1/3 mx-auto  shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)] rounded-lg p-5 backdrop-blur-md' key={dt._id}>
         <h3 id='taskName' className='text-white text-lg'>{dt.taskName}</h3>
-        <input id='updateInput' value={updateTaskValue} onChange={e => {setUpdateTaskValue(e.target.value)}} type="text" className='w-1/2 md:w-full text-white border-white border-b-2 border-solid focus:outline-none bg-transparent hidden'/>
+        <input id='updateInput' value={updateTaskValue} onChange={e => {setUpdateTaskValue(e.target.value)}} type="text" className='w-full text-white border-white border-b-2 border-solid focus:outline-none bg-transparent hidden'/>
 
         <div className='flex gap-5 text-lg'>
             <button id='abortBtn' className='' onClick={() => deleteTask(dt._id)}>⛔</button>
