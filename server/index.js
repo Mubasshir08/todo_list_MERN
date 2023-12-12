@@ -3,10 +3,10 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 // connect to db
-const dbConfig = require('../config/db.js');
+const dbConfig = require('./config/db.js');
 
 // import models
-const toDoModel = require('../models/tasks.js');
+const toDoModel = require('./models/tasks.js');
 
 const app = express();
 
