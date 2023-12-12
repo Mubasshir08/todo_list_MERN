@@ -1,9 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const mongoose = require('mongoose');
+mongoose.connect('mongodb+srv://mubasshir:82XZUZ38LZ0rQCkG@cluster0.66r4eon.mongodb.net/react_ToDo_list?retryWrites=true&w=majority');
 
 // connect to db
-const dbConfig = require('./config/db.js');
+// const dbConfig = require('./config/db.js');
 
 // import models
 const toDoModel = require('./models/tasks.js');
