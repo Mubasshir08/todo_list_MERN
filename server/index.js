@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const getClientIp = require("get-client-ip");
 const cors = require('cors');
 
 // connect to db
@@ -26,13 +27,14 @@ app.get('/', (req,res)=> {
 })
 
 app.get('/tasks' , async (req,res) => {
-    const tasks = await toDoModel.find();
+    const tasks = await toDoModel.find({clientIp : getClientIp(req)});
     res.send(tasks);
 });
 
 app.post('/createTask' , async (req,res) => {
     const createTask = await new toDoModel({
-        taskName : req.body.task
+        taskName : req.body.task,
+        clientIp : getClientIp(req)
 }); 
     await createTask.save();
     res.send(createTask);
